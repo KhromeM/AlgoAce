@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "Leetcode to Github",
+	"version": "0.01",
+	"description": "Saves sucessful leetcode submissions to github.",
+	"action": {
+		"default_popup": "./html/popup.html",
+		"default_icon": "./resources/icon.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["./scripts/content2.js", "./scripts/content.js"],
+			"matches": [
+				"https://developer.chrome.com/docs/extensions/*",
+				"https://developer.chrome.com/docs/webstore/*",
+				"https://leetcode.com/*",
+				"https://www.bloomberg.com/*"
+			]
+		}
+	],
+	"background": {
+		"service_worker": "./scripts/background.js"
+	},
+	"permissions": ["activeTab", "scripting"]
+}
