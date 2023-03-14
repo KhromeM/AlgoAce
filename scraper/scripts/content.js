@@ -1,3 +1,4 @@
+const server = "http://localhost:8080/";
 currUrl = window.location.href;
 console.log(currUrl);
 
@@ -22,7 +23,7 @@ console.log(currUrl);
 // }, 1000);
 
 const submit = () => {
-	setTimeout(() => {
+	setTimeout(async () => {
 		uri = window.location.href;
 		console.log(uri);
 		parts = uri.split("/");
@@ -40,8 +41,17 @@ const submit = () => {
 
 		const editor = document.querySelector(".language-python");
 		code = editor.textContent;
-
-		// send to server
+		// await fetch("https://www.leetcode.com/");
+		fetch(server, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				code,
+				fileName,
+			}),
+		}).then((data) => console.log(data));
 	}, 3000);
 };
 
