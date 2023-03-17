@@ -3,6 +3,7 @@
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnX+ldsXKeZT5PdD1ULjgkpUjUpwskU0xAoD9a02MMKjo9Mr5nxP9HSXRr5n8ZCZhCkuWz3vys83mG/HpWf/Re/mTWfcYoKCBdxs6+4YlSFxhFkJ4mjPrJI7Rd48NXbIjUxdE5rl2WgdvtjiBa+ppsXv0Nk9Vkqgbgfyij2W7mxHumyY7tH7f0LL5eBhapjY+7YElzmR5zlmuOdA2KXf04/TxkfG3Tq7ls90oRKnUUtlKlqWozecJpV3YmCW9hqd7Dy6s75UOg+vyoEDC1h4uMKPRGCD/otu65cYy6zkoKAWd1pYhQVWvKD7fIrTkp1Cf9GLkzPm5D0hqvCJfF2JZSwIDAQAB",
 	"name": "AlgoAce Chrome Extension",
 	"version": "0.01",
+	"author": "Khurram Mustafa",
 	"description": "Integrates with AlgoAce.dev",
 	"action": {
 		"default_popup": "./html/popup.html",
@@ -11,9 +12,21 @@
 	"content_scripts": [
 		{
 			"js": ["scripts/content.js"],
-			"matches": ["https://leetcode.com/*"]
+			"matches": [
+				"https://leetcode.com/*",
+				"https://github.com/*",
+				"http://localhost:8080/*"
+			]
 		}
 	],
-	"permissions": ["activeTab", "scripting"],
-	"host_permissions": ["https://www.leetcode.com/*", "http://localhost:8080/*"]
+	"permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
+	"host_permissions": [
+		"https://www.leetcode.com/*",
+		"http://localhost:8080/*",
+		"https://github.com/*",
+		"https://api.github.com/*"
+	],
+	"background": {
+		"service_worker": "scripts/background.js"
+	}
 }
