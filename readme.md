@@ -8,4 +8,10 @@ DONE - extension extracts code from leetcode website
 
 DONE - extension sends code to server
 
-- enable github auth for extension
+DONE - enable github auth for extension
+
+- enable reauth if required? (low priority)
+
+- add suport for languages besides python (high)
+
+- polish and ship (high)
