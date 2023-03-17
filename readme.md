@@ -2,6 +2,8 @@ Plan
 
 Due Mar 14 2023
 
-- extension activates on leetcode submissions
+DONE - extension activates on leetcode submissions
 
-- extension extracts code from leetcode website
+DONE - extension extracts code from leetcode website
+
+- enable github auth for extension
