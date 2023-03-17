@@ -10,8 +10,10 @@ DONE - extension sends code to server
 
 DONE - enable github auth for extension
 
-- enable reauth if required? (low priority)
+- submit from server (high)
 
 - add suport for languages besides python (high)
 
 - polish and ship (high)
+
+- enable reauth if required? (low priority)
